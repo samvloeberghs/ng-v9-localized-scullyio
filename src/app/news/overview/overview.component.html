@@ -1,0 +1,6 @@
+<p>overview works!</p>
+<ul>
+  <li *ngFor="let newsdetail of news$ | async">
+    <a [routerLink]="newsdetail.id">{{newsdetail.title}}</a>
+  </li>
+</ul>
