@@ -1,3 +1,7 @@
+const {
+  registerPlugin,
+  configValidator
+} = require('@scullyio/scully/bin');
 const minify = require('html-minifier').minify;
 
 const minifyOptions = {
@@ -19,5 +23,11 @@ function minifyHtmlPlugin(html, route) {
   const minifiedHtml = minify(html, minifyOptions);
   return Promise.resolve(minifiedHtml);
 }
+
+minifyHtmlPlugin[configValidator] = async options => {
+  return [];
+};
+
+registerPlugin('render', 'minifyHtml', minifyHtmlPlugin);
 
 module.exports.minifyHtmlPlugin = minifyHtmlPlugin;

@@ -1,0 +1,17 @@
+{
+  "ROUTES": {
+    "home": "",
+    "about": "over",
+    "news": "nieuws",
+    "contact": "contact",
+    "not-found": "niet-gevonden",
+    "archive": "archief"
+  },
+  "NOTFOUND": "Niet gevonden",
+  "CONTACT": "Contact NL",
+  "HOME": "Thuis",
+  "NEWS": "Nieuws",
+  "ABOUT": "Over",
+  "WORLD": "Wereld",
+  "CHANGELANG": "Verander taal"
+}

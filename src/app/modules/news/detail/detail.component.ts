@@ -5,7 +5,7 @@ import { combineLatest, Observable } from 'rxjs';
 import { map, pluck } from 'rxjs/operators';
 
 import { NewsDetail } from './detail.model';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-news-detail',

@@ -1,0 +1,17 @@
+{
+  "ROUTES": {
+    "home": "",
+    "about": "about",
+    "news": "news",
+    "contact": "contact",
+    "not-found": "not-found",
+    "archive": "archive"
+  },
+  "NOTFOUND": "Not found",
+  "CONTACT": "Contact EN",
+  "HOME": "Home",
+  "NEWS": "News",
+  "ABOUT": "About",
+  "WORLD": "World",
+  "CHANGELANG": "Change language"
+}

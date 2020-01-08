@@ -1,21 +1,25 @@
 [
   {
     "id": 1,
+    "slug": "newsitem-1",
     "title": "Newsitem #1",
     "short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fringilla eget felis vitae rhoncus. Nullam iaculis hendrerit fringilla. Cras nec rhoncus nibh, a lacinia tortor."
   },
   {
     "id": 2,
+    "slug": "newsitem-2",
     "title": "Newsitem #2",
     "short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fringilla eget felis vitae rhoncus. Nullam iaculis hendrerit fringilla. Cras nec rhoncus nibh, a lacinia tortor."
   },
   {
     "id": 5,
+    "slug": "newsitem-5",
     "title": "Newsitem #5",
     "short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fringilla eget felis vitae rhoncus. Nullam iaculis hendrerit fringilla. Cras nec rhoncus nibh, a lacinia tortor."
   },
   {
     "id": 99,
+    "slug": "newsitem-99",
     "title": "Newsitem #99",
     "short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fringilla eget felis vitae rhoncus. Nullam iaculis hendrerit fringilla. Cras nec rhoncus nibh, a lacinia tortor."
   }

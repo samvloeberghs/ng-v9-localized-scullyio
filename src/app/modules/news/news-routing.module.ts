@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LocalizeRouterModule } from '@gilsdav/ngx-translate-router';
 
 import { OverviewComponent } from './overview/overview.component';
 import { DetailComponent } from './detail/detail.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 const routes: Routes = [
   {
@@ -10,14 +12,24 @@ const routes: Routes = [
     component: OverviewComponent,
   },
   {
-    path: ':id',
+    path: ':id/:slug',
     component: DetailComponent,
   },
+  {
+    path: 'archive',
+    component: ArchiveComponent,
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  imports: [
+    RouterModule.forChild(routes),
+    LocalizeRouterModule.forChild(routes),
+  ],
+  exports: [
+    RouterModule,
+    LocalizeRouterModule,
+  ],
 })
 export class NewsRoutingModule {
 }
