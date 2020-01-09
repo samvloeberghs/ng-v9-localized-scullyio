@@ -1,18 +1,25 @@
 require('./plugins/minifyHtmlPlugin');
-require('./plugins/voidPlugin');
+require('./plugins/testPlugin');
 
 exports.config = {
-  projectRoot: "./src/app",
+  projectRoot: './src/app',
   routes: {
-    "/about": {
-      "type": "minifyHtml"
+    /*
+    '/about': {
+      type: 'void',
+      postRenderers: ['test'],
     },
-    "/news/:id": {
-      "type": "json",
-      "id": {
-        "url": "http://localhost:4200/assets/news.json",
-        "property": "id"
+     */
+    '/news/:id/:slug': {
+      type: 'json',
+      id: {
+        'url': 'http://localhost:4200/assets/news.json',
+        'property': 'id'
+      },
+      slug: {
+        'url': 'http://localhost:4200/assets/news/${id}.json',
+        'property': 'slug'
       }
-    }
+    },
   }
 };

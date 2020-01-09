@@ -1,7 +1,7 @@
 const {
   registerPlugin,
   configValidator
-} = require('@scullyio/scully/bin');
+} = require('@scullyio/scully');
 const minify = require('html-minifier').minify;
 
 const minifyOptions = {

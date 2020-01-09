@@ -12,13 +12,13 @@ const routes: Routes = [
     component: OverviewComponent,
   },
   {
+    path: 'archive',
+    component: ArchiveComponent,
+  },
+  {
     path: ':id/:slug',
     component: DetailComponent,
   },
-  {
-    path: 'archive',
-    component: ArchiveComponent,
-  }
 ];
 
 @NgModule({

@@ -3,15 +3,21 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { MissingTranslationHandler, TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { OverviewComponent } from './overview/overview.component';
 import { DetailComponent } from './detail/detail.component';
 import { NewsRoutingModule } from './news-routing.module';
 import { ArchiveComponent } from './archive/archive.component';
-import { createTranslateLoader } from '../../app.module';
 import { MyMissingTranslationHandler } from '../../services/missing-translation-handler';
 import { LanguageService } from '../../services/language.service';
+import { environment } from '../../../environments/environment';
 
+export function createTranslateLoader(prefix = '') {
+  return (http: HttpClient) => {
+    return new TranslateHttpLoader(http, `${environment.url}/assets/i18n/${prefix}`, '.json');
+  };
+}
 @NgModule({
   declarations: [OverviewComponent, DetailComponent, ArchiveComponent],
   imports: [
