@@ -1,1 +1,1 @@
-[{"route":"/"},{"route":"/about"},{"route":"/not-found"},{"route":"/news"},{"route":"/news/archive"},{"route":"/news/:id/:slug"},{"route":"/blog/1-10-2020-blog","title":"This is the blog","description":"blog description","publish":false},{"route":"/blog/this-is-a-test-post","title":"This is a test post","description":"blog description","publish":false}]
+[{"route":"/"},{"route":"/about"},{"route":"/not-found"},{"route":"/news"},{"route":"/news/archive"}]
