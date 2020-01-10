@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { combineLatest, Observable } from 'rxjs';
-import { map, pluck, switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { pluck, switchMap } from 'rxjs/operators';
 
 import { NewsDetail } from './detail.model';
 import { environment } from '../../../../environments/environment';

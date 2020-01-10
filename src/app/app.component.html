@@ -1,9 +1,23 @@
 <h1>Hello {{'WORLD' | translate}}</h1>
+<!--
 <p>
   {{'CHANGELANG' | translate}}:
   <a href="/en" (click)="setLanguage($event,'en')">EN</a> -
   <a href="/nl" (click)="setLanguage($event, 'nl')">NL</a>
 </p>
+-->
+<ul>
+  <li>
+    <a [routerLink]="['/']">{{'HOME' | translate}}</a>
+  </li>
+  <li>
+    <a [routerLink]="['/about']">{{'ABOUT' | translate}}</a>
+  </li>
+  <li>
+    <a [routerLink]="['/news']">{{'NEWS' | translate}}</a>
+  </li>
+</ul>
+<!--
 <ul>
   <li>
     <a [routerLink]="['/' | localize]">{{'HOME' | translate}}</a>
@@ -15,4 +29,5 @@
     <a [routerLink]="['/news' | localize]">{{'NEWS' | translate}}</a>
   </li>
 </ul>
+-->
 <router-outlet></router-outlet>

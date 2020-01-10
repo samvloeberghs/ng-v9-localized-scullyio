@@ -1,8 +1,14 @@
 <p>{{'NEWS' | translate}}</p>
 
+<a [routerLink]="['archive']">{{'ARCHIVE' | translate}}</a>
+<!--
 <a [routerLink]="['archive' | localize]">{{'ARCHIVE' | translate}}</a>
+-->
 <ul>
   <li *ngFor="let newsdetail of news$ | async">
+    <a [routerLink]="[newsdetail.id, newsdetail.slug]">{{newsdetail.title}}</a>
+    <!--
     <a [routerLink]="[newsdetail.id, '!'+newsdetail.slug | localize]">{{newsdetail.title}}</a>
+    -->
   </li>
 </ul>

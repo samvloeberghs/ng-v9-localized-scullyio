@@ -1,11 +1,6 @@
 import { NgModule } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import {
-  LocalizeParser,
-  LocalizeRouterModule,
-  LocalizeRouterSettings,
-  ManualParserLoader,
-} from '@gilsdav/ngx-translate-router';
+import { LocalizeParser, LocalizeRouterModule, LocalizeRouterSettings, ManualParserLoader } from '@gilsdav/ngx-translate-router';
 import { Location } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -38,17 +33,22 @@ const routes: Routes = [
   },
   {
     path: 'not-found',
-    component: NotFoundComponent
+    component: NotFoundComponent,
+  },
+  {
+    path: 'blog',
+    loadChildren: () => import('./modules/blog/blog.module').then(m => m.BlogModule),
   },
   {
     path: '**',
-    redirectTo: '/not-found'
-  }
+    redirectTo: '/not-found',
+  },
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
+    /*
     LocalizeRouterModule.forRoot(routes, {
       parser: {
         provide: LocalizeParser,
@@ -56,10 +56,11 @@ const routes: Routes = [
         deps: [TranslateService, Location, LocalizeRouterSettings],
       },
     }),
+     */
   ],
   exports: [
     RouterModule,
-    LocalizeRouterModule,
+    // LocalizeRouterModule,
   ],
 })
 export class AppRoutingModule {

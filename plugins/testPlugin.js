@@ -4,7 +4,7 @@ const {
 } = require('@scullyio/scully');
 
 async function testPlugin(html, route) {
-  console.log('route tested', route);
+  console.log('route tested: ', route.route);
   return Promise.resolve(html);
 }
 

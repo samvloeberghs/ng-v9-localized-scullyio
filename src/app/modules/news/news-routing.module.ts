@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LocalizeRouterModule } from '@gilsdav/ngx-translate-router';
 
 import { OverviewComponent } from './overview/overview.component';
 import { DetailComponent } from './detail/detail.component';
@@ -24,11 +23,11 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forChild(routes),
-    LocalizeRouterModule.forChild(routes),
+    // LocalizeRouterModule.forChild(routes),
   ],
   exports: [
     RouterModule,
-    LocalizeRouterModule,
+    // LocalizeRouterModule,
   ],
 })
 export class NewsRoutingModule {

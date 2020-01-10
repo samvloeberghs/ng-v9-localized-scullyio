@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { MissingTranslationHandler, TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { OverviewComponent } from './overview/overview.component';
@@ -43,11 +42,11 @@ export class NewsModule {
   constructor(
     private readonly languageService: LanguageService,
     private readonly translateService: TranslateService,
-    private readonly localizeRouterService: LocalizeRouterService
+    // private readonly localizeRouterService: LocalizeRouterService
   ) {
     languageService.currentLanguage$.subscribe((lang) => {
       translateService.use(lang);
-      localizeRouterService.changeLanguage(lang);
+      // localizeRouterService.changeLanguage(lang);
     });
   }
 }

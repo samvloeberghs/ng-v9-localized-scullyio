@@ -1,25 +1,24 @@
-import { Component } from '@angular/core';
-import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
+import { Component, OnDestroy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { skip } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+
 import { LanguageService, languageType } from './services/language.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
 
   private readonly unsubscribe = new Subject<void>();
 
- constructor (private readonly languageService: LanguageService,
-              private readonly localizeRouterService: LocalizeRouterService,
+  constructor(private readonly languageService: LanguageService,
+              // private readonly localizeRouterService: LocalizeRouterService,
               private readonly translateService: TranslateService) {
-   this.init();
-   this.listenToLanguageChanges();
- }
+    this.init();
+    this.listenToLanguageChanges();
+  }
 
   ngOnDestroy(): void {
     this.unsubscribe.next();
@@ -32,13 +31,15 @@ export class AppComponent {
   }
 
   private init(): void {
-    const currentLang = <languageType>this.localizeRouterService.parser.currentLang;
+    // const currentLang = <languageType> this.localizeRouterService.parser.currentLang;
+    const currentLang = 'en';
     this.languageService.setCurrentLanguage(currentLang);
   }
 
   private listenToLanguageChanges() {
-    this.languageService.currentLanguage$.pipe(skip(1)).subscribe(lang => {
-      this.localizeRouterService.changeLanguage(lang);
+    this.languageService.currentLanguage$.pipe().subscribe(lang => {
+    // this.languageService.currentLanguage$.pipe(skip(1)).subscribe(lang => {
+      // this.localizeRouterService.changeLanguage(lang);
       this.translateService.use(lang);
     });
   }
