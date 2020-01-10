@@ -4,6 +4,20 @@ require('./plugins/testPlugin');
 exports.config = {
   projectRoot: './src/app',
   routes: {
+    /*
+    '/': {
+      type: 'default',
+      postRenderers: ['test' , 'minifyHtml'],
+    },
+    '/about': {
+      type: 'default',
+      postRenderers: ['test' , 'minifyHtml'],
+    },
+    '/not-found': {
+      type: 'default',
+      postRenderers: ['test' , 'minifyHtml'],
+    },
+     */
     '/news/:id/:slug': {
       type: 'json',
       postRenderers: ['minifyHtml'],
