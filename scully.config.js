@@ -1,13 +1,15 @@
 require('./plugins/minifyHtmlPlugin');
 require('./plugins/testPlugin');
 
+const postRenderers = ['test', 'minifyHtml'];
+
 exports.config = {
   projectRoot: './src/app',
-  defaultPostRenderers: ['test', 'minifyHtml'],
+  defaultPostRenderers: postRenderers,
   routes: {
     '/news/:id/:slug': {
       type: 'json',
-      postRenderers: ['minifyHtml'],
+      postRenderers: postRenderers,
       id: {
         url: 'http://localhost:4200/assets/news.json',
         property: 'id',
@@ -19,7 +21,7 @@ exports.config = {
     },
     '/blog/:slug': {
       type: 'contentFolder',
-      postRenderers: ['test', 'minifyHtml'],
+      postRenderers: postRenderers,
       slug: {
         folder: "./blog"
       }
