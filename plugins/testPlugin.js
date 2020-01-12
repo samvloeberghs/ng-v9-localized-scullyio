@@ -13,5 +13,3 @@ testPlugin[configValidator] = async options => {
 };
 
 registerPlugin('render', 'test', testPlugin);
-
-module.exports.testPlugin = testPlugin;

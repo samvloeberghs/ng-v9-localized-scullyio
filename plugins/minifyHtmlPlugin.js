@@ -29,5 +29,3 @@ minifyHtmlPlugin[configValidator] = async options => {
 };
 
 registerPlugin('render', 'minifyHtml', minifyHtmlPlugin);
-
-module.exports.minifyHtmlPlugin = minifyHtmlPlugin;

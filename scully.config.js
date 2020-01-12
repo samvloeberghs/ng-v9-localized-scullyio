@@ -1,6 +1,12 @@
+const {
+  RouteTypes,
+} = require('@scullyio/scully');
+
 require('./plugins/minifyHtmlPlugin');
 require('./plugins/testPlugin');
+require('./plugins/newsPlugin');
 
+// custom plugins in ./plugins/{test, minifyHtml}Plugin.js
 const postRenderers = ['test', 'minifyHtml'];
 
 exports.config = {
@@ -8,19 +14,12 @@ exports.config = {
   defaultPostRenderers: postRenderers,
   routes: {
     '/news/:id/:slug': {
-      type: 'json',
+      type: 'news',   // custom plugin in ./plugins/newsPlugin.js\
+      url: 'http://localhost:4200/assets/news.json',
       postRenderers: postRenderers,
-      id: {
-        url: 'http://localhost:4200/assets/news.json',
-        property: 'id',
-      },
-      slug: {
-        url: 'http://localhost:4200/assets/news/${id}.json',
-        property: 'slug',
-      },
     },
     '/blog/:slug': {
-      type: 'contentFolder',
+      type: RouteTypes.contentFolder,
       postRenderers: postRenderers,
       slug: {
         folder: "./blog"

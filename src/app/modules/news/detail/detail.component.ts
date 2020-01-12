@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { pluck, switchMap } from 'rxjs/operators';
+import { map, pluck, switchMap } from 'rxjs/operators';
 
 import { NewsDetail } from './detail.model';
 import { environment } from '../../../../environments/environment';
@@ -20,6 +20,7 @@ export class DetailComponent implements OnInit {
       switchMap((id: string) => {
         return this.httpClient.get<NewsDetail>(`${environment.url}/assets/news/${id}.json`);
       }),
+      map(news => news[0]),
     );
 
   constructor(
