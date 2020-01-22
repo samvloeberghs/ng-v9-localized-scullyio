@@ -29,7 +29,7 @@
     "@scullyio/ng-lib": "latest",
     "@scullyio/scully": "latest",
     "rxjs": "~6.5.3",
-    "scully-minify-html": "latest",
+    "scully-minify-html": "/Users/samvloeberghs/Projects/Kwerri/kwerri-oss/dist/scully-minify-html/scully-minify-html-1.4.1.tgz",
     "scully-disable-angular": "latest",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
