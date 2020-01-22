@@ -3,4 +3,5 @@ export interface NewsDetail {
   slug: string;
   title: string;
   short: string;
+  long?: string;
 }

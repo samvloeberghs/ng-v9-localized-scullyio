@@ -6,6 +6,7 @@ import { map, pluck, switchMap } from 'rxjs/operators';
 
 import { NewsDetail } from './detail.model';
 import { environment } from '../../../../environments/environment';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-news-detail',
@@ -21,11 +22,18 @@ export class DetailComponent implements OnInit {
         return this.httpClient.get<NewsDetail>(`${environment.url}/assets/news/${id}.json`);
       }),
       map(news => news[0]),
+      map(newsdetail => {
+        return {
+          ...newsdetail,
+          long: this.domSanitizer.bypassSecurityTrustHtml(newsdetail.long),
+        };
+      }),
     );
 
   constructor(
     private readonly httpClient: HttpClient,
     private readonly activatedRoute: ActivatedRoute,
+    private readonly domSanitizer: DomSanitizer,
   ) {
   }
 

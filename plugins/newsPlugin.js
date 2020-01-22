@@ -1,14 +1,8 @@
-const {
-  registerPlugin,
-  configValidator,
-  routeSplit
-} = require('@scullyio/scully');
+const {registerPlugin, routeSplit, httpGetJson} = require('@scullyio/scully');
 
-const {
-  httpGetJson
-} = require('@scullyio/scully/utils/httpGetJson');
+const News = 'news';
 
-async function newsPlugin(route, config) {
+const newsPlugin = async(route, config) => {
   const {createPath} = routeSplit(route);
   const list = await httpGetJson(config.url);
   const handledRoutes = [];
@@ -18,10 +12,10 @@ async function newsPlugin(route, config) {
     });
   }
   return handledRoutes;
-}
-
-newsPlugin[configValidator] = async options => {
-  return [];
 };
 
-registerPlugin('router', 'news', newsPlugin);
+// no validation implemented
+const newsPluginValidator =  async () => [];
+
+registerPlugin('router', News, newsPlugin);
+exports.News = News;

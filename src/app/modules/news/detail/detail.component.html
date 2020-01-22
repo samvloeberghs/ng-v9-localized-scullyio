@@ -1,5 +1,11 @@
 <p>{{'DETAIL' | translate}}</p>
 
 <div *ngIf="newsDetail$ | async as newsDetail">
-  {{newsDetail | json}}
+  <h1>{{newsDetail.title}}</h1>
+  <p class="short">
+    <img src="https://via.placeholder.com/250" />
+    {{newsDetail.short}}
+  </p>
+  <div [innerHTML]="newsDetail.long"></div>
+  <img src="https://via.placeholder.com/500" />
 </div>

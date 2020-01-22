@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --stats-json",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -25,10 +25,12 @@
     "@gilsdav/ngx-translate-router": "^3.0.0-rc4",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
-    "@scullyio/init": "0.0.11",
+    "@scullyio/init": "latest",
     "@scullyio/ng-lib": "latest",
     "@scullyio/scully": "latest",
     "rxjs": "~6.5.3",
+    "scully-minify-html": "latest",
+    "scully-disable-angular": "latest",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

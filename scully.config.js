@@ -1,29 +1,26 @@
-const {
-  RouteTypes,
-} = require('@scullyio/scully');
+const {RouteTypes} = require('@scullyio/scully');
+const {MinifyHtml} = require('scully-minify-html');
+const {DisableAngular} = require('scully-disable-angular');
 
-require('./plugins/minifyHtmlPlugin');
-require('./plugins/testPlugin');
-require('./plugins/newsPlugin');
+// custom plugins in ./plugins/*.js
+const {News} = require('./plugins/newsPlugin');
 
-// custom plugins in ./plugins/{test, minifyHtml}Plugin.js
-const postRenderers = ['test', 'minifyHtml'];
+const postRenderers = [MinifyHtml, DisableAngular];
 
 exports.config = {
   projectRoot: './src/app',
   defaultPostRenderers: postRenderers,
   routes: {
     '/news/:id/:slug': {
-      type: 'news',   // custom plugin in ./plugins/newsPlugin.js\
+      type: News,
       url: 'http://localhost:4200/assets/news.json',
-      postRenderers: postRenderers,
     },
     '/blog/:slug': {
       type: RouteTypes.contentFolder,
-      postRenderers: postRenderers,
       slug: {
         folder: "./blog"
-      }
+      },
+      postRenderers: postRenderers
     },
   }
 };
