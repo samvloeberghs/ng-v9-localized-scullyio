@@ -32,7 +32,7 @@
     "@scullyio/scully": "latest",
     "rxjs": "~6.5.3",
     "scully-minify-html": "1.4.1",
-    "scully-disable-angular": "/Users/samvloeberghs/Projects/Kwerri/kwerri-oss/dist/scully-disable-angular/scully-disable-angular-2.2.0.tgz",
+    "scully-disable-angular": "2.2.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
