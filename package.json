@@ -12,7 +12,7 @@
     "scully": "scully",
     "scully:serve": "scully serve",
     "serve:app": "npx ws --spa index.html --port 4200 -d dist/ng-v9-localized-scullyio",
-    "serve:static": "npx ws --spa index.html--port 4200 -d dist/static"
+    "serve:static": "npx ws --port 4200 -d dist/static"
   },
   "private": true,
   "dependencies": {
@@ -31,8 +31,8 @@
     "@scullyio/ng-lib": "0.0.16",
     "@scullyio/scully": "latest",
     "rxjs": "~6.5.3",
-    "scully-disable-angular": "2.0.0",
     "scully-minify-html": "1.4.1",
+    "scully-disable-angular": "/Users/samvloeberghs/Projects/Kwerri/kwerri-oss/dist/scully-disable-angular/scully-disable-angular-2.2.0.tgz",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

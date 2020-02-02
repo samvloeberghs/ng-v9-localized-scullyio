@@ -6,22 +6,20 @@ const {DisableAngular} = require('scully-disable-angular');
 const {News} = require('./plugins/newsPlugin');
 const {Test} = require('./plugins/testPlugin');
 
-const postRenderers = [MinifyHtml, DisableAngular, Test];
+const postRenderers = [DisableAngular, MinifyHtml, Test];
 
 const minifyHtmlOptions = {
-  removeComments: false,
-  removeAttributeQuotes: true
+  removeComments: false
 };
 
 exports.config = {
   projectRoot: './src',
   defaultPostRenderers: postRenderers,
   minifyHtmlOptions,
-  extraRoutes: [''],
   routes: {
     '/news/:id/:slug': {
       type: News,
-      url: 'http://localhost:4200/assets/news.json'
+      url: 'http://localhost:4321/assets/news.json'
     },
     '/blog/:slug': {
       type: RouteTypes.contentFolder,
