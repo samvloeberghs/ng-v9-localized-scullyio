@@ -21,7 +21,7 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
+            "tsConfig": "src/tsconfig.app.json",
             "aot": true,
             "assets": [
               "src/favicon.ico",
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-v9-localized-scullyio"
+    }
+  },
+  "defaultProject": "ng-v9-localized-scullyio",
+  "cli": {
+    "analytics": "803cb235-c687-41f0-a662-75f3cbb91eff"
+  }
 }
