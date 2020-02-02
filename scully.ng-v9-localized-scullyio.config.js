@@ -9,7 +9,7 @@ const {Test} = require('./plugins/testPlugin');
 const postRenderers = [DisableAngular, MinifyHtml, Test];
 
 const minifyHtmlOptions = {
-  removeComments: false
+  removeComments: false,
 };
 
 exports.config = {
