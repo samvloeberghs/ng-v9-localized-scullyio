@@ -1,14 +1,14 @@
-import { Component, OnDestroy } from "@angular/core";
-import { TranslateService } from "@ngx-translate/core";
-import { Subject } from "rxjs";
+import { Component, OnDestroy } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { IdleMonitorService } from '@scullyio/ng-lib';
+import { Subject } from 'rxjs';
 
-import { LanguageService, languageType } from "./services/language.service";
-import { IdleMonitorService } from "@scullyio/ng-lib";
+import { LanguageService, languageType } from './services/language.service';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"]
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnDestroy {
   private readonly unsubscribe = new Subject<void>();
@@ -17,7 +17,7 @@ export class AppComponent implements OnDestroy {
     private readonly languageService: LanguageService,
     // private readonly localizeRouterService: LocalizeRouterService,
     private readonly translateService: TranslateService,
-    private idle: IdleMonitorService
+    private readonly idleMonitorService: IdleMonitorService,
   ) {
     this.init();
     this.listenToLanguageChanges();
@@ -35,7 +35,7 @@ export class AppComponent implements OnDestroy {
 
   private init(): void {
     // const currentLang = <languageType> this.localizeRouterService.parser.currentLang;
-    const currentLang = "en";
+    const currentLang = 'en';
     this.languageService.setCurrentLanguage(currentLang);
   }
 
