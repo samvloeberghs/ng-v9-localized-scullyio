@@ -14,7 +14,7 @@ const minifyHtmlOptions = {
 };
 
 exports.config = {
-  projectRoot: './src/app',
+  projectRoot: './',
   defaultPostRenderers: postRenderers,
   minifyHtmlOptions,
   routes: {

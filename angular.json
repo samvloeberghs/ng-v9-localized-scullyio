@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-v9-localized-scullyio"
+    }
+  },
+  "defaultProject": "ng-v9-localized-scullyio",
+  "cli": {
+    "analytics": "803cb235-c687-41f0-a662-75f3cbb91eff"
+  }
 }
