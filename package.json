@@ -5,12 +5,14 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --stats-json",
+    "build:prod": "ng build --stats-json --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "scully": "scully",
     "scully:serve": "scully serve",
-    "serve:static": "npx ws --port 4200 -d dist/static"
+    "serve:app": "npx ws --spa index.html --port 4200 -d dist/ng-v9-localized-scullyio",
+    "serve:static": "npx ws --spa index.html--port 4200 -d dist/static"
   },
   "private": true,
   "dependencies": {
@@ -30,7 +32,7 @@
     "@scullyio/scully": "latest",
     "rxjs": "~6.5.3",
     "scully-minify-html": "/Users/samvloeberghs/Projects/Kwerri/kwerri-oss/dist/scully-minify-html/scully-minify-html-1.4.1.tgz",
-    "scully-disable-angular": "latest",
+    "scully-disable-angular": "/Users/samvloeberghs/Projects/Kwerri/kwerri-oss/dist/scully-disable-angular/scully-disable-angular-2.0.0.tgz",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
