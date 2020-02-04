@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  padding: 0 20px;
+}
+
+img.float {
+  width: 25%;
+  display: block;
+  float: right;
+}

@@ -28,7 +28,7 @@
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
     "@scullyio/init": "latest",
-    "@scullyio/ng-lib": "0.0.16",
+    "@scullyio/ng-lib": "0.0.17",
     "@scullyio/scully": "latest",
     "rxjs": "~6.5.3",
     "scully-minify-html": "1.4.1",
