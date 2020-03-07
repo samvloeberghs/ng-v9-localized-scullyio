@@ -32,8 +32,8 @@
     "@scullyio/ng-lib": "0.0.17",
     "@scullyio/scully": "latest",
     "rxjs": "~6.5.3",
-    "scully-minify-html": "1.4.2",
-    "scully-disable-angular": "2.2.0",
+    "scully-plugin-minify-html": "2.0.0",
+    "scully-plugin-disable-angular": "3.0.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

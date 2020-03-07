@@ -1,6 +1,6 @@
 const {RouteTypes} = require('@scullyio/scully');
-const {MinifyHtml} = require('scully-minify-html');
-const {DisableAngular} = require('scully-disable-angular');
+const {MinifyHtml} = require('scully-plugin-minify-html');
+const {DisableAngular} = require('scully-plugin-disable-angular');
 
 // custom plugins in ./plugins/*.js
 const {News} = require('./plugins/newsPlugin');
