@@ -1,5 +1,4 @@
 const {registerPlugin} = require('@scullyio/scully');
-const {scullyConfig} = require('@scullyio/scully/utils/config');
 
 const Test = 'test';
 
